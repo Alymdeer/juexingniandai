@@ -1,7 +1,6 @@
 import requests
-import lxml
+import random
 from bs4 import BeautifulSoup
-
 def getComments(id,pageNum):
     movieComments = ""
     for i in range(pageNum):
@@ -30,27 +29,23 @@ def saveComments(Comments):
 
 if __name__ == '__main__':
     id = '30228394'
-    pageNum = 25
+    pageNum=random.randint(10,50)
     Comments = getComments(id,pageNum)
     saveComments(Comments)
 from jieba.analyse import *
 
 keyWord = []
-Weight = []
 def getData():
-    with open('movieComments.txt', encoding ='utf-8') as f:
+    with open('movieComments.txt',encoding = 'utf-8') as f:
         data = f.read()
-    for keyword, weight in extract_tags(data, topK=100, withWeight=True):
+    for keyword in extract_tags(data, topK=100):
         keyWord.append(keyword)
-        Weight.append(weight)
-
-def saveData(keyWord,Weight):
-    with open('TF-IDFanalyse.txt', 'w') as f:
+def saveData(keyWord):
+    with open('TF-IDFanalyse.txt','w') as f:
         for i in range(len(keyWord)):
-            f.write(str(i+1)+'.'+str(keyWord[i])+' '+str(Weight[i]))
+            f.write(str(i+1)+'.'+str(keyWord[i]))
             f.write('\n')
-
 if __name__ == '__main__':
     getData()
-    saveData(keyWord,Weight)
+    saveData(keyWord)
     print('保存成功！')
