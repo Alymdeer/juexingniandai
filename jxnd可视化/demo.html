@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.min.js"></script>
+</head>
+</html>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+</body>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '你从什么渠道了解《觉醒年代》的'
+            },
+            tooltip: {
+                formatter:'{c}%'　
+                //trigger:'axis'
+            },
+            //legend: {
+                //data:['销量']
+           // },
+            //grid: {
+              //  borderWidth: 0,
+                //y: 80,
+                //y2:60
+            //},
+            xAxis: [
+                {
+                type:'category',
+                data: ["电视","媒体推荐","朋友安利","二创转发","其他"]
+            }
+        ],
+            yAxis: [{
+
+            }
+        ],
+            series: [
+                {
+                type: 'bar',
+                itemStyle: 
+                {
+                    emphasis: {
+                        barBorderRadius: 10
+                    },
+                normal: {
+                    barBorderRadius: 10,
+                    color: new echarts.graphic.LinearGradient(
+                        0,0,0,1,[ {offset: 0, color: '#FCA6AC'},
+                                {offset: 1, color: '#BD0714'}]//从上到下渐变
+                    ),
+                    function(params) {
+                         // build a color map as your need.
+                         var colorList = [
+                            '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD',
+                            '#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+                            '#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0'
+                           
+                            
+                           
+                         ];
+                         return colorList[params.dataIndex]
+                         
+                     },
+                label:{
+                    show: true,
+                    position:'top',
+                    formatter:'{b}\n{c}%'
+                }
+                
+                }
+                
+            },
+            data: [43.83, 64.81, 50, 27.78, 2.47],
+        }
+        ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

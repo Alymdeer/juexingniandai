@@ -1,0 +1,58 @@
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>PoPo数据可视化_极坐标系下的堆叠柱状图</title>
+		<script src="http://static.popodv.com/dvlibs/echarts/echarts.v4.min.js"></script>
+		<style>html,body,#container{width:100%;height:100%;margin:0;padding:0;}</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script>
+
+		var myChart = echarts.init(document.getElementById('container'));
+		var option = {
+			angleAxis: {
+				type: 'category',
+				data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+				z: 10
+			},
+			radiusAxis: {
+			},
+			polar: {
+			},
+			series: [{
+				type: 'bar',
+				data: [1, 2, 3, 4, 3, 5, 1],
+				coordinateSystem: 'polar',
+				name: 'A',
+				stack: 'a'
+			}, {
+				type: 'bar',
+				data: [2, 4, 6, 1, 3, 2, 1],
+				coordinateSystem: 'polar',
+				name: 'B',
+				stack: 'a'
+			}, {
+				type: 'bar',
+				data: [1, 2, 3, 4, 1, 2, 5],
+				coordinateSystem: 'polar',
+				name: 'C',
+				stack: 'a'
+			}],
+			legend: {
+				show: true,
+				data: ['A', 'B', 'C']
+			}
+		};
+
+		myChart.setOption(option);
+
+		// 刷新调整
+		window.onresize = function () {
+			myChart.resize();
+		}
+				</script>
+</body>
+</html>
