@@ -1,0 +1,69 @@
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>PoPo数据可视化_极坐标系下的堆叠柱状图</title>
+		<script src="http://static.popodv.com/dvlibs/echarts/echarts.v4.min.js"></script>
+		<style>html,body,#container{width:100%;height:100%;margin:0;padding:0;}</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script>
+
+		var myChart = echarts.init(document.getElementById('container'));
+		var option = {
+			title: {
+                text: '你从什么渠道了解《觉醒年代》的',
+				backgroundColor: '#FFFFFF',  
+				subtext:'数据来源：新京报',
+				textStyle: {
+                fontWeight: 'normal',              //标题颜色
+                color: '#BD0714'
+        },
+		        subtextStyle:{
+					fontWeight: 'normal',              //标题颜色
+                color: '#000000'
+				}
+            },
+            tooltip: {
+                formatter:'{c}%'　
+                //trigger:'axis'
+            },
+			angleAxis: {
+				type: 'category',
+				data: ['电视', '媒体推荐', '朋友安利', '二创转发', '其他'],
+				z: 10
+			},
+			radiusAxis: {
+			},
+			polar: {
+			},
+			series: [{
+                
+				type: 'bar',
+				data: [43.83, 64.81, 50, 27.78, 2.47],
+				coordinateSystem: 'polar',
+				name: '比例',
+				stack: 'a'
+			}],
+			legend: {
+				show: true,
+				data: ['比例']
+			},
+            label:{
+                    show: true,
+                    position:'top',
+                    formatter:'{b}\n{c}%'
+                }
+		};
+
+		myChart.setOption(option);
+
+		// 刷新调整
+		window.onresize = function () {
+			myChart.resize();
+		}
+				</script>
+</body>
+</html>
