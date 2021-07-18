@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>PoPo数据可视化_极坐标系下的堆叠柱状图</title>
+		<script src="http://static.popodv.com/dvlibs/echarts/echarts.v4.min.js"></script>
+		<style>html,body,#container{width:85%;height:85%;margin:0;padding:0;}</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script>
+
+		var myChart = echarts.init(document.getElementById('container'));
+		//var barHeight = 50;
+        option = {
+            title: {
+               //text: '你从什么渠道了解《觉醒年代》的',
+				backgroundColor: '#FFFFFF',  
+				//subtext:'数据来源：新京报',
+				textStyle: {
+                fontWeight: 'normal',              //标题颜色
+                color: '#BD0714',
+				x:'center',
+				y:'bottom',
+				align:'center',
+				lineHeight:1,
+                
+        },
+		    subtextStyle:{
+				fontWeight: 'normal',              //标题颜色
+                color: '#000000'
+				}
+            },
+            tooltip: {
+                formatter:'{c}%'　
+                //trigger:'axis'
+            },
+    angleAxis: {
+        center:['50%','65%']
+    },
+    radiusAxis: {
+        type: 'category',
+        data: ['其他', '自传', '看书', '报道','影视'],
+        z: 10,
+        //center:['50%','65%']
+    },
+    polar: {
+        color:'#BD0714'
+    },
+    series: [{
+        //radius:'62%',
+        //center:['50%','65%'],
+        type: 'bar',
+        data: [0.62,48.77,52.47,61.35,25.93],
+        coordinateSystem: 'polar',
+        name: '比例',
+        stack: 'a',
+        itemStyle: 
+                {
+                    emphasis: {
+                        barBorderRadius: 10
+                    },
+                normal: {
+                    barBorderRadius: 10,
+                    color: new echarts.graphic.LinearGradient(
+                        0,0,0,1,[ {offset: 0, color: '#E67064'},
+                                {offset: 1, color: '#9B2519'}]//从上到下渐变
+                    )
+                         
+                     },
+        }
+    }],
+    legend: {
+				orient:'vertical',
+				x:'right',
+				y:'bottom',
+				show: true,
+				data: ['比例']
+			},
+    label:{
+                    show: true,
+                    position:'top',
+                    formatter:'{b}\n{c}%'
+                },
+    grid: {
+                    y: 10,    //上下距离
+
+                    // y2: 36,
+
+                    x2: 1,
+
+                    height: "10%"
+
+                }
+
+
+};
+
+
+        myChart.setOption(option);
+
+// 刷新调整
+        window.onresize = function () {
+        myChart.resize();
+        }
+        </script>
+        </body>
+        </html>
