@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>demo4</title>
+		<script src="http://static.popodv.com/dvlibs/echarts/echarts.v4.min.js"></script>
+		<style>html,body,#container{width:80%;height:80%;margin:0;padding:0;}</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script>
+
+		var myChart = echarts.init(document.getElementById('container'));
+		//var barHeight = 50;
+        option = {
+        tooltip: {
+            formatter:'{c}%'　
+            //trigger:'axis'
+        },
+        color:[ '#BD0714','#E35D4F'],
+    series: [
+        
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: ['20%', '60%'],
+            labelLine: {
+                length: 30,
+            },
+            legend: {
+				orient:'vertical',
+				x:'right',
+				y:'bottom',
+				show: true,
+				data: ['女','男']
+			},
+            label: {
+                
+                    show: true,
+                    position:'top',
+                    formatter:'{b}\n{c}%',
+                
+                    backgroundColor: '#F6F8FC',
+                    borderColor: '#E25A4C',
+                    borderWidth: 1,
+                    borderRadius: 1,
+                
+                
+                
+            },
+            data: [
+                {value: 61.6, name: '女'},
+                {value: 38.4, name: '男'},
+                
+            ]
+        }
+    ]
+};
+
+
+
+        myChart.setOption(option);
+
+		// 刷新调整
+		window.onresize = function () {
+			myChart.resize();
+		}
+				</script>
+</body>
+</html>
