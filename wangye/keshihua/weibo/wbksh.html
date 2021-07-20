@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>微博数据</title> 
+		<link href="css/bootstrap-4.2.1.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+	</head>
+
+	<body  background="../../pictures/beijing1.jpg"
+	  style="background-size:width=100%"
+	  background-attachment:fixed>
+	    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhuye.html">主页<span class="sr-only">(current)</span></a>
+            </li>
+			  <li class="nav-item"> </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+</form>
+        </div>
+      </div>
+  </nav>
+		<center>
+			<p><br></p><h1 style="text-align: center">在微博得到的数据</h1><p><br></p>
+		  <h5>下图为在微博爬取觉醒年代广场实时微博，后得到相应的词云图，<br>进一步探索该剧讨论度较高的内容，可以看出对各个角色及剧情的讨论较多。</h5><p><br></p>
+		  <img src="xiyun.png" width="400" height="" alt=""/>
+		  <p><br></p><h4>微博情感统计</h4><p><br></p>
+		  <img src="qinggantongji.png" width="400" height="" alt=""/>
+		  <p><br></p><h4>微博情感变动</h4><p><br></p>
+		  <img src="qingganbiandong.png" width="400" height="" alt=""/>
+			<p><br></p><p><br></p><h5>下面是统计了觉醒年代相关热搜词条及其搜索量后，做出时间与热搜及搜索量的柱状图。<br>可以清楚地看出6月20日左右《觉醒年代》微博热搜的数量和讨论度是最高的。</h5><p><br></p>
+		<div id="main" style="width: 900px;height:400px;"></div>
+		<p><br></p><h4>微博讨论角色频率分布</h4><p><br></p>
+		<div id="main1" style="width: 470px;height:470px;"></div>
+    <script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('main'));
+	var myChart1 = echarts.init(document.getElementById('main1'));
+    option = {
+        dataZoom: [{
+        type: 'inside',
+        start: 0,
+        end: 20
+    }, {
+        start: 0,
+        end: 20
+    }],
+        title: {
+            text: "《觉醒年代》微博热搜统计",
+            left: "center",
+            top: "top",
+            textStyle: {
+            fontSize: 20
+            },
+            subtextStyle: {
+            fontSize: 15
+            },
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        xAxis: {
+            type: 'category',
+            name:'日期',
+            data: ['03-01', '03-02', '03-03', '03-04', '03-05', '03-06','03-07','03-08','03-09','03-10','03-11','03-12','03-13','03-14','03-15','03-16','03-17','03-18\n觉醒年代陈独秀送儿子留学片段','03-19','03-20','03-21','03-22','03-23','03-24','03-25','03-26','03-27','03-28','03-29','03-30','03-31',
+            '04-01', '04-02', '04-03', '04-04', '04-05', '04-06','04-07','04-08','04-09','04-10','04-11','04-12','04-13','04-14','04-15','04-16','04-17','04-18','04-19','04-20','04-21','04-22','04-23','04-24\n觉醒年代上头','04-25','04-26','04-27','04-28','04-29','04-30',
+            '05-01', '05-02', '05-03', '05-04', '05-05', '05-06','05-07\n曹磊在觉醒年代中没有用手替','05-08','05-09','05-10','05-11','05-12','05-13','05-14\n觉醒年代的选角','05-15','05-16','05-17','05-18','05-19','05-20','05-21\n觉醒年代入围白玉兰八项提名','05-22','05-23','05-24','05-25\n觉醒年代是否能觉醒历史教育','05-26','05-27','05-28','05-29','05-30','05-31\n看觉醒年代的我',
+            '06-01\n觉醒年代导演人民日报撰文', '06-02\n觉醒年代为何能让人共情', '06-03', '06-04', '06-05\n觉醒年代壁纸\n& 觉醒年代巴黎和会', '06-06','06-07\n觉醒年代yyds','06-08','06-09\n觉醒年代的隐喻绝了','06-10\n觉醒年代旅游打卡攻略','06-11\n觉醒年代白玉兰最佳原创编剧\n& 导演称拍觉醒年代时时刻刻想着年轻观众','06-12','06-13','06-14','06-15','06-16\n觉醒年代的版画绝了','06-17\n觉醒年代编剧新作主角是陈延年','06-18\n觉醒年代小头像','06-19\n觉醒年代同款打卡路线','06-20','06-21','06-22','06-23\n觉醒年代热播年轻人与烈士隔空对话','06-24','06-25\n觉醒年代葛树贵真实的结局','06-26\n觉醒年代革命者联动','06-27','06-28\n零成本复刻觉醒年代名场面','06-29','06-30',
+            '07-01\n一图导览重回觉醒年代的北京\n& 我们的生活就是觉醒年代的续集', '07-02\n建党百年文艺演出再现觉醒年代\n& 觉醒年代', '07-03', '07-04', '07-05', '07-06','07-07\n觉醒年代剧组好细节','07-08','07-09','07-10','07-11','07-12','07-13','07-14','07-15\n觉醒年代编剧讲述如何塑造人物','07-16','07-17','07-18','07-19','07-20',]
+        },
+        yAxis: {
+            type: 'value',
+            name:'热搜及搜索量',
+        },
+        grid: {containLabel: true,left: 10,},
+        series: [{
+            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,204498,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,125013,0,0,0,0,0,0,
+            0,0,0,0,0,0,239799,0,0,0,0,0,0,129013,0,0,0,0,0,0,126246,0,0,0,114181,0,0,0,0,0,248367,
+            175933,246221,0,0,188497,0,304601,0,23680,224584,52786,0,0,0,0,250868,30178,110654,174658,0,0,0,179059,0,138960,156070,0,189993,0,0,
+            39044,47217,0,0,0,0,165508,0,0,0,0,0,0,0,183725],
+            type: 'bar',  
+            itemStyle:{ color:'#BD0714'}
+        },{
+            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,252243,0,0,0,0,0,298598,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            170519,90981,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            type: 'bar',  
+            itemStyle:{ color:'#BD0714'}
+        },]
+    };
+    option1 = {
+            title: {
+                text: '微博讨论角色频率分布',
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                left: 'center',
+                data: ['次数']
+            },
+            grid: {
+                    //top: 10,
+                    //left:40,
+                },
+            radar: [
+                {
+                    indicator: [
+                        {text: '陈独秀', max: 100},
+                        {text: '鲁迅', max: 100},
+                        {text: '李大钊', max: 100},
+                        {text: '胡适', max: 100},
+                        {text: '蔡元培', max: 100},
+                        {text: '辜鸿铭', max: 100},
+                        {text: '陈乔年', max: 100},
+                        {text: '陈延年', max: 100},
+                    ],
+                    center: ['50%', '50%'],
+                   // radius: 80
+                },
+            ],
+            series: [
+                {
+                    type: 'radar',
+                    tooltip: {
+                        trigger: 'item'
+                    },
+                    areaStyle: {},
+                    data: [
+                        {
+                            value: [98, 79, 75, 45,35,29,12,11],
+                            name: '次数'
+                        }
+                    ],
+                    itemStyle:{
+                        color:'#BD0714'
+                    }
+                },
+                
+            ]
+        };
+    myChart.setOption(option,true);
+	myChart1.setOption(option1,true);
+    </script>
+	</center>
+</body>
+</html>

@@ -1,0 +1,92 @@
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>demo3</title>
+		<script src="http://static.popodv.com/dvlibs/echarts/echarts.v4.min.js"></script>
+		<style>html,body,#container{width:85%;height:85%;margin:0;padding:0;}</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script>
+
+		var myChart = echarts.init(document.getElementById('container'));
+		//var barHeight = 50;
+		var option = {
+            title: {
+                text: '为什么喜欢看《觉醒年代》？',
+				backgroundColor: '#FFFFFF',  
+				subtext:'数据来源：新京报',
+				textStyle: {
+                fontWeight: 'normal',              //标题颜色
+                color: '#BD0714',
+				x:'cneter',
+				y:'top',
+				align:'center',
+				lineHeight:1
+        },
+		    subtextStyle:{
+				fontWeight: 'normal',              //标题颜色
+                color: '#000000'
+				}
+            },
+    dataset: {
+        source: [
+            ['proportion', '数量', 'product'],
+            [54.32,54.32 , '剧情还原历史'],
+            [63.58,63.58, '制作精良'],
+            [54.32,54.32, '剧本精良'],
+            [48.77,48.77, '人物有血有肉'],
+            [30.86,30.86, '艺术水准高'],
+            [27.16,27.16, '不单是喊口号'],
+            [18.52,18.52, '了解党史，心潮澎湃']
+            
+        ]
+    },
+    //tooltip: {
+      //          formatter:'{c}%'　
+                //trigger:'axis'
+        //    },
+    grid: {containLabel: true},
+    xAxis: {name: '数量'},
+    yAxis: {type: 'category'},
+    visualMap: {
+        orient: 'horizontal',
+        left: 'center',
+        min: 0,
+        max: 80,
+        text: ['低', '高'],
+        // Map the score column to color
+        dimension: 0,
+        inRange: {
+            color: ['#FFE5E9', '#D81602', '#730C01']
+        }
+    },
+    series: [
+        {
+            type: 'bar',
+            encode: {
+                // Map the "amount" column to X axis.
+                x: '数量',
+                // Map the "product" column to Y axis
+                y: 'product'
+            }
+        }
+    ],
+    //label:{
+                  //  show: true,
+                    //position:'top',
+                    //formatter:'{b}\n{c}%'
+                //}
+};
+
+		myChart.setOption(option);
+
+		// 刷新调整
+		window.onresize = function () {
+			myChart.resize();
+		}
+				</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 700px;height:700px;"></div>
+    <script type="text/javascript">
+     var myChart = echarts.init(document.getElementById('main'));
+     option = {
+            title: {
+                text: '微博讨论角色频率分布',
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                left: 'center',
+                data: ['次数']
+            },
+            grid: {
+                    top: 10,
+                    left:40,
+                },
+            radar: [
+                {
+                    indicator: [
+                        {text: '陈独秀', max: 100},
+                        {text: '鲁迅', max: 100},
+                        {text: '李大钊', max: 100},
+                        {text: '胡适', max: 100},
+                        {text: '蔡元培', max: 100},
+                        {text: '辜鸿铭', max: 100},
+                        {text: '陈乔年', max: 100},
+                        {text: '陈延年', max: 100},
+                    ],
+                    center: ['25%', '40%'],
+                    radius: 80
+                },
+            ],
+            series: [
+                {
+                    type: 'radar',
+                    tooltip: {
+                        trigger: 'item'
+                    },
+                    areaStyle: {},
+                    data: [
+                        {
+                            value: [98, 79, 75, 45,35,29,12,11],
+                            name: '次数'
+                        }
+                    ],
+                    itemStyle:{
+                        color:'#BD0714'
+                    }
+                },
+                
+            ]
+        };
+     myChart.setOption(option);
+    </script>
+</body>
+</html>

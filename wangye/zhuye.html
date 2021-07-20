@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JueXingNianDai</title>
+	<script src="jquery-3.2.1.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.2.1.css" rel="stylesheet">
+    <script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+    </script>
+  </head>
+  <body background="pictures/beijing4.jpg"  style="background-size:contain" onLoad="MM_preloadImages('演员角色图/《觉醒年代》李大钊.jpg','演员角色图/《觉醒年代》陈独秀.jpg','演员角色图/《觉醒年代》邓中夏.jpg','演员角色图/《觉醒年代》赵世炎.jpg','演员角色图/《觉醒年代》辜鸿铭.jpg','演员角色图/《觉醒年代》周恩来.jpg','演员角色图/《觉醒年代》陈延年.jpg','演员角色图/《觉醒年代》蔡元培.jpg','演员角色图/《觉醒年代》陈乔年.jpg','演员角色图/《觉醒年代》毛泽东.jpg','演员角色图/《觉醒年代》胡适.jpg','演员角色图/《觉醒年代》鲁迅.jpg','pictures/01.png','pictures/02.png')" background-attachment:fixed>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhuye.html">主页<span class="sr-only">(current)</span></a>
+            </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">人物简介</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/chenduxiu.html">陈独秀</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/lidazhao.html">李大钊</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/maozedong.html">毛泽东</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhouenlai.html">周恩来</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/caiyuanpei.html">蔡元培</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/hushi.html">胡适</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/chenyannian.html">陈延年</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/chenqiaonian.html">陈乔年</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/luxun.html">鲁迅</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/guhongming.html">辜鸿铭</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhaoshiyan.html">赵世炎</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/dengzhongxia.html">邓中夏</a>
+              </div>
+            </li>   
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据可视化</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/bilibili/blblksh.html">哔哩哔哩</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/weibo/wbksh.html">微博</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/douban/dbksh.html">豆瓣</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/baiduzhishu/bdzsksh.html">百度指数</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/xinjingbao/xjbksh.html">新京报</a>
+              </div>
+            </li> 
+			  <li class="nav-item">
+              <a class="nav-link" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/yansheng.html">衍生效应</a>
+            </li>
+
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+</form>
+        </div>
+      </div>
+  </nav>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-12 col-lg-9 offset-lg-1">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+              <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="pictures/p5.jpg" alt="First slide"  class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block"> </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="pictures/p6.jpg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block"> </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="pictures/p3.jpg" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block"> </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+	  <p><br></p>
+    <div class="container">
+      <div class="row">
+		  <div class="col-2 col-lg-2 offset-lg-0"></div>
+<div class="col-10 ml-1 col-lg-3 offset-lg-1">
+      <div class="col-2 col-lg-1 offset-lg-1"><a href="keshihua.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image50','','pictures/01.png',1)"><img src="pictures/01.png" alt="" width="100" height="100" id="Image50"></a></div>
+          <h4 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;数据可视化</a></h4>
+        </div>
+		  <div class="col-2 col-lg-2 offset-lg-0"></div>
+<div class="col-10 ml-1 offset-lg-1 col-lg-2"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/yansheng.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image51','','pictures/02.png',1)"><img src="pictures/02.png" alt="" width="100" height="100" id="Image51"></a>
+      <h4 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/yansheng.html" title="Link" style="color:rgba(216,216,216,1.00)">衍生效应</a></h4>
+            </div>
+      </div>
+  </div>
+	  <p><br></p><p><br></p>
+  <hr>
+    <h2 class="text-center">主要角色</h2>
+    <hr>
+<p><br></p><p><br></p>
+<div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <ul class="list-unstyled">
+            <li class="media">
+             <a href="lidazhao.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image21','','演员角色图/《觉醒年代》李大钊.jpg',1)"><img src="演员角色图/《觉醒年代》李大钊.jpg" alt="" width="100" height="135" id="Image21" ></a>
+              <div class="media-body">
+                <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/lidazhao.html" title="Link" style="color:rgba(216,216,216,1.00)"> &nbsp;&nbsp;&nbsp;&nbsp;李大钊</a></h5>
+                <a href="https://baike.baidu.com/item/%E5%BC%A0%E6%A1%90/75023?fr=aladdin" title="Link" style="color:rgba(216,216,216,1.00)"> &nbsp;&nbsp;&nbsp;&nbsp; 张桐</a> 饰 </div>
+            </li>
+            <li class="media my-4">
+ <a href="zhouenlai.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image70','','演员角色图/《觉醒年代》周恩来.jpg',1)"><img src="演员角色图/《觉醒年代》周恩来.jpg" alt="" width="100" height="135" id="Image70"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhouenlai.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;周恩来</a></h5>
+             <a href="https://baike.baidu.com/item/%E5%A4%8F%E5%BE%B7%E4%BF%8A/10470003" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;夏德俊</a> 饰
+              </div>
+            </li>
+            <li class="media">
+<a href="chenyannian.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image27','','演员角色图/《觉醒年代》陈延年.jpg',1)"><img src="演员角色图/《觉醒年代》陈延年.jpg" alt="" width="100" height="135" id="Image27"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/chenyannian.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;陈延年</a></h5>
+            <a href="https://baike.baidu.com/item/%E5%BC%A0%E6%99%9A%E6%84%8F/4679314" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;张晚意</a> 饰 </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <ul class="list-unstyled">
+            <li class="media">
+<a href="chenduxiu.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image22','','演员角色图/《觉醒年代》陈独秀.jpg',1)"><img src="演员角色图/《觉醒年代》陈独秀.jpg" alt="" width="100" height="135" id="Image22"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/chenduxiu.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;陈独秀</a></h5>
+             <a href="https://baike.baidu.com/item/%E4%BA%8E%E5%92%8C%E4%BC%9F/8397485?fr=aladdin" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;于和伟</a> 饰
+              </div>
+            </li>
+            <li class="media my-4">
+<a href="caiyuanpei.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image28','','演员角色图/《觉醒年代》蔡元培.jpg',1)"><img src="演员角色图/《觉醒年代》蔡元培.jpg" alt="" width="100" height="135" id="Image28"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/caiyuanpei.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;蔡元培</a></h5>
+            <a href="https://baike.baidu.com/item/%E9%A9%AC%E5%B0%91%E9%AA%85/10003938" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;马少骅</a> 饰 </div>
+            </li>
+            <li class="media">
+<a href="chenqiaonian.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image29','','演员角色图/《觉醒年代》陈乔年.jpg',1)"><img src="演员角色图/《觉醒年代》陈乔年.jpg" alt="" width="100" height="135" id="Image29"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/chenqiaonian.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;陈乔年</a></h5>
+            <a href="https://baike.baidu.com/item/%E9%A9%AC%E5%90%AF%E8%B6%8A/19468257" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;马启越</a> 饰 </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <ul class="list-unstyled">
+            <li class="media">
+<a href="maozedong.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image30','','演员角色图/《觉醒年代》毛泽东.jpg',1)"><img src="演员角色图/《觉醒年代》毛泽东.jpg" alt="" width="100" height="135" id="Image30"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/maozedong.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;毛泽东</a></h5>
+            <a href="https://baike.baidu.com/item/%E4%BE%AF%E4%BA%AC%E5%81%A5/2928474" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;侯京健</a> 饰
+              </div>
+            </li>
+            <li class="media my-4">
+<a href="hushi.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image31','','演员角色图/《觉醒年代》胡适.jpg',1)"><img src="演员角色图/《觉醒年代》胡适.jpg" alt="" width="100" height="135" id="Image31"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/hushi.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;胡适</a></h5>
+            <a href="https://baike.baidu.com/item/%E6%9C%B1%E5%88%9A%E6%97%A5%E5%B0%A7/8485357" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;朱刚日尧</a> 饰
+              </div>
+            </li>
+            <li class="media">
+<a href="luxun.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image32','','演员角色图/《觉醒年代》鲁迅.jpg',1)"><img src="演员角色图/《觉醒年代》鲁迅.jpg" alt="" width="100" height="135" id="Image32"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/luxun.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;鲁迅</a></h5>
+            <a href="https://baike.baidu.com/item/%E6%9B%B9%E7%A3%8A/10830334" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;曹磊 </a>饰 </div>
+            </li>
+          </ul>
+        </div>
+		<div class="col-lg-4">
+          <ul class="list-unstyled">
+            <li class="media">
+<a href="guhongming.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image26','','演员角色图/《觉醒年代》辜鸿铭.jpg',1)"><img src="演员角色图/《觉醒年代》辜鸿铭.jpg" alt="" width="100" height="145" id="Image26"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/guhongming.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;辜鸿铭</a></h5>
+             <a href="https://baike.baidu.com/item/%E6%AF%95%E5%BD%A6%E5%90%9B/10772845" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;毕彦君 </a> 饰
+              </div>
+		    </li>
+          </ul>
+        </div>
+		<div class="col-lg-4">
+          <ul class="list-unstyled">
+            <li class="media">
+<a href="zhaoshiyan.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image25','','演员角色图/《觉醒年代》赵世炎.jpg',1)"><img src="演员角色图/《觉醒年代》赵世炎.jpg" alt="" width="100" height="145" id="Image25"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhaoshiyan.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;赵世炎</a></h5>
+             <a href="https://baike.baidu.com/item/%E6%9E%97%E4%BF%8A%E6%AF%85/433084" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;林俊毅 </a> 饰
+              </div>
+			  </li>
+          </ul>
+        </div>
+		<div class="col-lg-4">
+          <ul class="list-unstyled">
+            <li class="media">
+              <a href="dengzhongxia.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image23','','演员角色图/《觉醒年代》邓中夏.jpg',1)"><img src="演员角色图/《觉醒年代》邓中夏.jpg" alt="" width="100" height="145" id="Image23"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1"><a href="file:///C:/Users/Lenovo/PycharmProjects/juexing/dengzhongxia.html" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;邓中夏</a></h5>
+             <a href="https://baike.baidu.com/item/%E6%9F%A5%E6%96%87%E6%B5%A9/23187791" title="Link" style="color:rgba(216,216,216,1.00)">&nbsp;&nbsp;&nbsp;&nbsp;查文浩 </a> 饰
+              </div>
+		    </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ <p><br></p><p><br></p>
+  <hr>
+    <h2 class="text-center">人物关系图</h2>
+    <hr>
+<p><br></p><p><br></p>
+	  <center><div id="main" style="width:1000px;height:900px"></div></center>
+
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var categories = [];
+    categories[0] = {
+        name: '主要人物' ,
+		color:'white',
+    };
+    categories[1] = {
+        name: '其它人物'
+    };
+    
+    option = {
+        // 图的标题
+        //title: {
+           // x:'middle',
+            //text: '觉醒年代人物关系图',
+       // },
+        //图的位置
+        // grid: {
+        //       bottom: 150,
+        //       top: 0,
+        //       right: 0,
+        //       left: 0,
+        //       height: 300
+        //     },
+        // 提示框的配置
+        tooltip: {
+            formatter: function (x) {
+                return x.data.des;
+            }
+        },
+        // 工具箱
+        toolbox: {
+            // 显示工具箱
+            show: true,
+            feature: {
+                mark: { 
+                    show: true
+                   
+                },
+                // 还原
+                restore: {
+                    show: true
+                },
+                // 保存为图片
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        legend: [{
+            // selectedMode: 'single',
+            x:'left',
+            data: categories.map(function (a) {
+                return a.name;
+            })
+        }],
+        series: [{
+            type: 'graph', // 类型:关系图
+            layout: 'force', //图的布局，类型为力导图
+            symbolSize: 50, // 调整节点的大小
+            roam: false, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移,可以设置成 'scale' 或者 'move'。设置成 true 为都开启
+            edgeSymbol: ['circle', 'arrow'],
+            edgeSymbolSize: [2, 10],
+            edgeLabel: {
+                normal: {
+                    textStyle: {
+                        fontSize: 20
+                    }
+                }
+            },
+            force: {
+                repulsion: 2500,
+                edgeLength: [10, 50]
+            },
+            draggable: true,
+            lineStyle: {
+                normal: {
+                    width: 2,
+                    color: 'white',
+                }
+            },
+            edgeLabel: {
+                normal: {
+                    show: true,
+                    formatter: function (x) {
+                        return x.data.name;
+                    }
+                }
+            },
+            label: {
+                normal: {
+                    show: true,
+                    textStyle: {}
+                }
+            },
+            
+ 
+            // 数据
+            data: [{
+                name: '陈独秀',
+                des: '倡导新文化运动',
+                symbolSize: 60,
+                category: 0,
+            }, {
+                name: '李大钊',
+                des: '北京大学图书馆主任，革命先驱',
+                symbolSize: 60,
+                category: 0,
+            }, {
+                name: '陈延年',
+                des: '震旦学校学生，革命烈士',
+                symbolSize: 60,
+                category: 1,
+            }, {
+                name: '辜鸿铭',
+                des: '北京大学教授',
+                symbolSize: 60,
+                category: 0,
+            }, {
+                name: '周恩来',
+                des: '南开学校学生，中共早期党员',
+                symbolSize: 60,
+                category: 1,
+            },{
+                name: '毛泽东',
+                des: '北京大学图书管理员，中国共产党创始人之一',
+                symbolSize: 60,
+                category: 0,
+            },{
+                name: '胡适',
+                des: '北京大学教授',
+                symbolSize: 60,
+                category: 0,
+            },{
+                name: '蔡元培',
+                des: '北大校长',
+                symbolSize: 60,
+                category:0,
+            },{
+                name: '赵世炎',
+                des: '师大附中学生会干事长',
+                symbolSize: 60,
+                category: 1,
+            },{
+                name: '邓中夏',
+                des: '北京大学学生',
+                symbolSize: 60,
+                category: 1,
+            },{
+                name: '高君曼',
+                des: '陈独秀夫人',
+                symbolSize: 60,
+                category: 1,
+            },{
+                name: '鲁迅',
+                des: '北京大学兼职教师，号召“白话文运动”',
+                symbolSize: 60,
+                category: 0,
+            },{
+                name: '高君宇',
+                des: ' ',
+                symbolSize: 60,
+                category: 1,
+            },{
+                name: '瞿秋白',
+                des: ' ',
+                symbolSize: 60,
+                category: 1,
+            }],
+            links: [{
+                source: '陈独秀',
+                target: '陈延年',
+                name: '父子',
+                des: ' '
+            }, {
+                source: '陈独秀',
+                target: '高君曼',
+                name: '夫妻',
+                des: ' '
+            }, {
+                source: '陈独秀',
+                target: '李大钊',
+                name: '合作',
+                des: '共同参与编辑《新青年》，推动革命'
+            }, {
+                source: '鲁迅',
+                target: '蔡元培',
+                name: '朋友',
+                des: '多年革命盟友、朋友'
+            }, {
+                source: '蔡元培',
+                target: '陈独秀',
+                name: '聘请',
+                des: '蔡元培任北大校长期间聘请陈独秀讲学'
+            }, {
+                source: '蔡元培',
+                target: '李大钊',
+                name: '聘请',
+                des: '蔡元培任北大校长期间聘请李大钊讲学'
+            }, {
+                source: '蔡元培',
+                target: '辜鸿铭',
+                name: '聘请',
+                des: '蔡元培任北大校长期间聘请辜鸿铭讲学'
+            }, {
+                source: '赵世炎',
+                target: '陈独秀',
+                name: '共事',
+                des: '与陈独秀等共同领导和指挥上海工人第三次武装起义'
+            }, {
+                source: '陈独秀',
+                target: '周恩来',
+                name: '合作',
+                des: '合作des'
+            }, {
+                source: '鲁迅',
+                target: '胡适',
+                name: '朋友',
+                des: '多年革命盟友、朋友'
+            }, {
+                source: '鲁迅',
+                target: '蔡元培',
+                name: '朋友',
+                des: '多年革命盟友、朋友'
+            }, {
+                source: '邓中夏',
+                target: '瞿秋白',
+                name: '同事',
+                des: '共同任教上海大学'
+            },{
+                source: '李大钊',
+                target: '毛泽东',
+                name: '良师益友',
+                des: '李大钊被毛泽东视为“真正的老师”'
+            },{
+                source: '陈独秀',
+                target: '胡适',
+                name: '朋友',
+                des: '因《新青年》缔结深厚友谊'
+            },{
+                source: '陈独秀',
+                target: '高君宇',
+                name: '同事',
+                des: ' '
+            },{
+                source: '李大钊',
+                target: '高君宇',
+                name: '同事',
+                des: ' '
+            },{
+                source: '周恩来',
+                target: '高君宇',
+                name: '朋友',
+                des: ' '
+            },{
+                source: '鲁迅',
+                target: '瞿秋白',
+                name: '合作',
+                des: ' '
+            },{
+                source: '陈独秀',
+                target: '瞿秋白',
+                name: '同事',
+                des: '陈独秀到莫斯科，瞿秋白担任翻译'
+            }],
+            categories: categories,
+        }]
+    };
+    myChart.setOption(option);
+
+</script>
+    <hr>
+    <h2 class="text-center">剧中角色与历史人物对比图</h2>
+    <hr><p><br></p><p><br></p>
+        <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card">
+            <img class="card-img-top" src="pictures/ldz.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title" >张桐饰李大钊&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card">
+            <img class="card-img-top" src="pictures/mzd.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">侯京健饰毛泽东&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card">
+            <img class="card-img-top" src="pictures/zel.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">夏德俊饰周恩来&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center mt-4">
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card">
+            <img class="card-img-top" src="pictures/cyp.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">马少骅饰蔡元培&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</h6>
+</div>
+          </div>
+        </div>
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card">
+            <img class="card-img-top" src="pictures/hs.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">朱贺日尧饰胡适&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+</div>
+          </div>
+        </div>
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card">
+            <img class="card-img-top" src="pictures/lx.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">曹磊饰鲁迅&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</h6>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center mt-4">
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card"> <img class="card-img-top" src="pictures/dzx.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">查文浩饰邓中夏&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card"> <img class="card-img-top" src="pictures/zsy.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">林俊毅饰赵世炎&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card"> <img class="card-img-top" src="pictures/fsn.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">张艺文饰傅斯年&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center mt-4">
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card"> <img class="card-img-top" src="pictures/qxt.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">张露饰钱玄同&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card"> <img class="card-img-top" src="pictures/lbn.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">张风饰刘半农&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 pb-1 pb-md-0">
+          <div class="card"> <img class="card-img-top" src="pictures/py.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title">溥仪&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+	  <p><br></p><p><br></p>
+    <hr>
+  <div class="container text-white p-3 bg-dark">
+      <div class="row">
+<div class="col-md-4 col-6 col-lg-6">
+  <address>
+  <strong>小组成员：</strong><br>
+组长：<br>
+秦兆阳 大数据191&nbsp; &nbsp;Github：sirly789<br>
+组员：<br>
+卢宇晨 大数据191&nbsp; &nbsp;Github：Lycc0602<br>
+王露婷 大数据191&nbsp; &nbsp;Github：wlt200705<br>
+邢纪琛 大数据191&nbsp; &nbsp;Github：passionxjc<br>
+  </address>
+        </div>
+<div class="col-md-4 col-6 col-lg-6">
+  <address>
+    <br>
+    <br>
+   <br>
+    <br>
+    刘禹含 大数据191&nbsp; &nbsp;Github：yuhanliu231<br>
+	王艺萌 大数据191&nbsp; &nbsp;Github：Alymdeer<br>
+    </address>
+</div>
+      </div>
+    </div>
+    <footer class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>Copyright © MyWebsite. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.2.1.js"></script>
+</body>
+</html>

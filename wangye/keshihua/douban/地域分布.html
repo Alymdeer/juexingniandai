@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang=en-US class=no-js>
+
+<!-- 头文件 -->	
+<head>
+
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <title>demob</title>
+	<!-- 引入制作网页需要的素材 -->
+    <link rel=stylesheet href='css/style-core.css' type=text/css media=all />
+    
+
+    
+	<meta charset="utf-8">
+    <!-- 引入 echarts.js -->
+    <script src="js/echarts.js"></script>
+	
+</head>
+<!-- 网页主体 -->
+<body>
+				
+                   
+								<!-- 图表板块 -->
+								
+                                    <div>
+                                        <canvas  id="main5" width="700" height="600"></canvas>
+										<script src="js/china.js"></script>
+										<script type="text/javascript">
+											var myChart = echarts.init(document.getElementById('main5'));
+											function randomData() {
+												return Math.round(Math.random()*1000);
+											}
+	option = {
+        title: {
+                //text: '百度搜索指数全国地图',
+				backgroundColor: '#FFFFFF',  
+				//subtext:'数据来源：新京报',
+				textStyle: {
+                fontWeight: 'normal',              //标题颜色
+                color: '#BD0714',
+				x:'cneter',
+				y:'top',
+				align:'center',
+				lineHeight:1
+        },
+		    subtextStyle:{
+				fontWeight: 'normal',              //标题颜色
+                color: '#000000'
+				}
+            },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: 'iphone3'
+    },
+    visualMap: {
+        min: 100,
+        max: 1000,
+        left: 'left',
+        top: 'bottom',
+        text: ['高', '低'], // 文本，默认为数值文本
+        calculable: true,
+        inRange: {
+            color: ['#FFB3B3', '#D81602', '#730C01']
+        }
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {
+                readOnly: false
+            },
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [{
+        name: 'iphone3',
+        type: 'map',
+        mapType: 'china',
+        roam: false,
+        label: {
+            normal: {
+                show: true
+            },
+            emphasis: {
+                show: true
+            }
+        },
+        data: [{
+                name: '北京',
+                value: '529'
+            },
+            {
+                name: '上海',
+                value: '355'
+            },
+            {
+                name: '重庆',
+                value: '182'
+            },
+            {
+                name: '天津',
+                value: '129'
+            },
+            {
+                name: '内蒙古',
+                value: '81'
+            },
+            {
+                name: '新疆',
+                value: '56'
+            },
+            {
+                name: '广西',
+                value: '179'
+            },
+            {
+                name: '宁夏',
+                value: '29'
+            },
+            {
+                name: '西藏',
+                value: '5'
+            },
+            {
+                name: '河北',
+                value: '350'
+            },
+            {
+                name: '山西',
+                value: '217'
+            },
+            {
+                name: '辽宁',
+                value: '184'
+            },
+            {
+                name: '吉林',
+                value: '108'
+            },
+            {
+                name: '黑龙江',
+                value: '112'
+            },
+            {
+                name: '江苏',
+                value: '654'
+            },
+            {
+                name: '浙江',
+                value: '516'
+            },
+            {
+                name: '安徽',
+                value: '344'
+            },
+            {
+                name: '福建',
+                value: '268'
+            },
+            {
+                name: '江西',
+                value: '225'
+            },
+            {
+                name: '山东',
+                value: '596'
+            },
+            {
+                name: '台湾',
+                value: '0'
+            },
+            {
+                name: '河南',
+                value: '525'
+            },
+            {
+                name: '湖北',
+                value: '361'
+            },
+            {
+                name: '湖南',
+                value: '309'
+            },
+            {
+                name: '广东',
+                value: '1000'
+            },
+            {
+                name: '海南',
+                value: '46'
+            },
+            {
+                name: '四川',
+                value: '371'
+            },
+            {
+                name: '贵州',
+                value: '104'
+            },
+            {
+                name: '云南',
+                value: '128'
+            },
+            {
+                name: '陕西',
+                value: '203'
+            },
+            {
+                name: '甘肃',
+                value: '68'
+            },
+            {
+                name: '青海',
+                value: '15'
+            },
+            {
+                name: '香港',
+                value: '4'
+            },
+            {
+                name: '澳门',
+                value: '1'
+            },
+
+        ]
+    }, ]
+};
+											
+											
+											myChart.setOption(option);
+										</script>
+
+                                    </div>
+                                </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

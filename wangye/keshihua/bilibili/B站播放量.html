@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 900px;height:700px;"></div>
+    <script type="text/javascript">
+     var myChart = echarts.init(document.getElementById('main'));
+     option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        legend: {
+            top: 'top',
+            data:['<1w','1~10w','10~50w','50~100w','500~1000w']
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        series: [
+            {
+                name: '视频播放量',
+                type: 'pie',
+                selectedMode: 'single',
+                radius: [50, 250],
+                labelLine: {
+                    length: 30,
+                },
+                center: ['50%', '50%'],
+                roseType: 'area',
+                label: {
+                    formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                    backgroundColor: '#F6F8FC',
+                    borderColor: '#8C8D8E',
+                    borderWidth: 1,
+                    borderRadius: 3,
+                    
+                    rich: {
+                        a: {
+                            color: '#6E7079',
+                            lineHeight: 20,
+                            align: 'center'
+                        },
+                        hr: {
+                            borderColor: '#8C8D8E',
+                            width: '90%',
+                            borderWidth: 1,
+                            height: 0
+                        },
+                        b: {
+                            color: '#4C5058',
+                            fontSize: 12,
+                            fontWeight: 'bold',
+                            lineHeight: 20
+                        },
+                        per: {
+                            color: '#fff',
+                            backgroundColor: '#4C5058',
+                            padding: [2, 3],
+                            borderRadius: 3
+                        }
+                    }
+                },
+                itemStyle: {
+                    borderRadius: 8
+                },
+                data: [
+                    {
+                        value: 85, 
+                        name: '<1w',
+                        itemStyle:{
+                            color:'#F5A6AC'
+                        }
+                    },{
+                        value: 428, 
+                        name: '1~10w',
+                        itemStyle:{
+                            color:'#E61309'
+                        }
+                    },{
+                        value: 206, 
+                        name: '10~50w',
+                        itemStyle:{
+                            color:'#D71309'
+                        }
+                    },{
+                        value: 37, 
+                        name: '50~100w',
+                        itemStyle:{
+                            color:'#C81108'
+                        }
+                    },{
+                        value: 43, 
+                        name: '100~500w',
+                        itemStyle:{
+                            color:'#B91108'
+                        }
+                    },{
+                        value: 1, 
+                        name: '500~1000w',
+                        itemStyle:{
+                            color:'#A90F07'
+                        }
+                    },
+                    
+                ]
+            }
+        ]
+    };
+     myChart.setOption(option);
+    </script>
+</body>
+</html>

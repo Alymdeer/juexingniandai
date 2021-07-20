@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>demo7</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 500px;height:500px;"></div>
+    <div id="main1" style="width: 500px;height:500px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        var myChart1 = echarts.init(document.getElementById('main1'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+            formatter:'{c}%'　
+            //trigger:'axis'
+        },
+            series: {
+                legend: {
+				orient:'vertical',
+				x:'right',
+				y:'bottom',
+				show: true,
+				data: ['会','不会']
+			},
+                type: 'sunburst',
+                data: [{
+                    name: '会',
+                    
+                        children:[{
+                            value:24.31,
+                            name:'经典值得反复观看',
+                            itemStyle: {
+                            color: '#BD0714'
+                        }
+                        },{
+                            value:24.58,
+                            name:'重看细节',
+                            itemStyle: {
+                            color: '#9A0000'
+                        }
+
+                        },{
+                            value:20.61,
+                            name:'欣赏演技',
+                            itemStyle: {
+                            color: '#D20000'
+                        }
+                        },{
+                            value:13.21,
+                            name:'重温感人桥段',
+                            itemStyle:{color:'#CD3737'}
+                        }],
+                        itemStyle: {
+                            color: '#FF8181'
+                        }
+                    },
+                    {
+                        value: 12.78,
+                        name: '不会',
+                        children:[{
+                            value:12.78,
+                            name:'没有兴趣',
+                            itemStyle: {
+                            color: '#DB5A57'
+                        }
+                        }],
+                        itemStyle: {
+                            color:  '#FF6969'
+                        }
+                    }],
+                    itemStyle: {
+                        color: 'red'
+                    },
+                
+                itemStyle: {
+                    color: '#FFFFFF'
+                },
+                levels: [{
+                    // 留给数据下钻的节点属性
+                }, {
+                    itemStyle: {
+                        color: 'blue'
+                    }
+                }]
+            }
+        };
+        
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        myChart1.setOption(option2);
+    </script>
+</body>
+</html>

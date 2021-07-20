@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>衍生效应</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.2.1.css" rel="stylesheet">
+	  <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+  <script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+    </script>
+  </head>
+  <body background="pictures/beijing4.jpg"  style="background-size:contain" onLoad="MM_preloadImages('演员角色图/《觉醒年代》陈独秀.jpg','演员角色图/《觉醒年代》辜鸿铭.jpg','演员角色图/《觉醒年代》蔡元培.jpg','演员角色图/《觉醒年代》陈乔年.jpg','演员角色图/《觉醒年代》毛泽东.jpg','演员角色图/《觉醒年代》胡适.jpg','演员角色图/《觉醒年代》鲁迅.jpg','pictures/w4.jpg','pictures/w5.jpg','pictures/w6.jpg')" background-attachment:fixed>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhuye.html">主页<span class="sr-only">(current)</span></a>
+            </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">人物简介</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/chenduxiu.html">陈独秀</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/lidazhao.html">李大钊</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/maozedong.html">毛泽东</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhouenlai.html">周恩来</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/caiyuanpei.html">蔡元培</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/hushi.html">胡适</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/chenyannian.html">陈延年</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/chenqiaonian.html">陈乔年</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/luxun.html">鲁迅</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/guhongming.html">辜鸿铭</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhaoshiyan.html">赵世炎</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/dengzhongxia.html">邓中夏</a>
+              </div>
+            </li>   
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据可视化</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/bilibili/blblksh.html">哔哩哔哩</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/weibo/wbksh.html">微博</a>
+                <a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/douban/dbksh.html">豆瓣</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/baiduzhishu/bdzsksh.html">百度指数</a>
+				<a class="dropdown-item" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/keshihua/xinjingbao/xjbksh.html">新京报</a>
+              </div>
+            </li> 
+			  <li class="nav-item">
+              <a class="nav-link" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/yansheng.html">衍生效应</a>
+            </li>
+
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+</form>
+        </div>
+      </div>
+  </nav>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-12 col-lg-9 offset-lg-1">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+              <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="pictures/w1.png" alt="First slide"  class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block"> </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="pictures/w2.png" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block"> </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="pictures/w3.png" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block"> </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div><center>
+	  	  <p><br></p><p><br></p>
+  <hr>
+  <h2 class="text-center">同期收视率对比图 </h2>
+  <h5 class="text-center"><br>
+    下图是今年1月30号~3月19号《觉醒年代》的收视率；<br>
+    其中每个节点表示的是一周的收视统计数；<br>
+    可以看到这几周《觉醒年代》收视率几乎都是第一名，<br>
+    这说明该剧深受大家的喜爱。《觉醒年代》实火！ </h5>
+  <hr>
+<p><br></p>
+<div id="main" style="width:900px;height:400px;background-color: #DED6D6"></div>
+    <script type="text/javascript">
+     var myChart = echarts.init(document.getElementById('main'));
+   
+        option = {
+            baseOption: {
+                timeline: {
+                    axisType: 'category',
+                    // realtime: false,
+                    // loop: false,
+                    autoPlay: true,
+                    // currentIndex: 2,
+                    playInterval: 1000,
+                     controlStyle: {
+                         position: 'center'
+                     },
+                    data: [
+                        {
+                            value: '1月30日~2月5日',
+                            tooltip: {
+                                formatter: '{b} 《觉醒年代》2月1日首映，首次播放即霸占收视率榜首'
+                            },
+                            symbol: 'diamond',
+                            symbolSize: 16
+                        },
+                        '2月6日-2月12日', '2月13日-2月19日','2月27日-3月5日','3月6日-3月12日','3月13日-3月19日',
+    
+                    ],
+                    
+                },
+                title: {
+                    subtext: '数据来自——中国视听大数据'
+                },
+                tooltip: {
+                },
+                legend: {
+                    left: 'right',
+                    data: ['收视率'],
+                },
+                calculable : true,
+                grid: {
+                    top: 90,
+                    bottom: 90,
+                    left:40,
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow',
+                            label: {
+                                show: true,
+                            }
+                        }
+                    }
+                },
+                xAxis: [
+                    {
+                        'type':'category',
+                        'axisLabel':{'interval':0},
+                        'data':[
+                            '觉醒年代','跨过鸭绿江','风起霓裳',' 正青春（东方卫视）','正青春（浙江卫视）','假日暖洋洋',
+                            '隐秘而伟大','甜蜜','刑警之海外行动','生活万岁','暴风眼（东方卫视）'
+                        ],
+                        splitLine: {show: false},
+                        
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '收视率（%）'
+                    }
+                ],
+                series: [
+                    {name: '收视率', type: 'bar',
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: '#FCA6AC'},
+                                {offset: 0.5, color: '#F84A56'},
+                                {offset: 1, color: '#BD0714'}
+                            ]
+                        )
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: '#FCA6AC'},
+                                    {offset: 0.7, color: '#F61626'},
+                                    {offset: 1, color: '#BD0714'}
+                                ]
+                            )
+                        }
+                    },
+                }
+                ]
+            },
+            options: [
+                {
+                    title: {text: '黄金时段电视剧收视情况收视率：1月30日-2月5日'},
+                    series: [
+                        
+                        {data: [
+                            {name: '觉醒年代',
+                            value: 1.459,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1.204},
+                            {name: '风起霓裳', value: 0.612},
+                            {name: '正青春（东方卫视）', value:0.604},
+                            {name: '正青春（浙江卫视）', value:0.479},
+                            {name: '假日暖洋洋', value:0.364},
+                            {name: '隐秘而伟大', value:0.251},
+                            {name: '甜蜜', value:0},
+                            {name: '刑警之海外行动', value: 0},
+                            {name: '生活万岁', value:0},
+                            {name: '暴风眼（东方卫视）', value:0},
+                           
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：2月6日-2月12日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.391,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1.323},
+                            {name: '风起霓裳', value: 0.691},
+                            {name: '正青春（东方卫视）', value:0.685},
+                            {name: '正青春（浙江卫视）', value:0.551},
+                            {name: '假日暖洋洋', value:0.342},
+                            {name: '隐秘而伟大', value:0.260},
+                            {name: '甜蜜', value:0},
+                            {name: '刑警之海外行动', value: 0},
+                            {name: '生活万岁', value:0},
+                            {name: '暴风眼（东方卫视）', value:0},
+                         
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：2月13日-2月19日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.351,
+                            itemStyle: {
+                            color: '#a90000'
+                            }},
+                            {name: '跨过鸭绿江', value: 1.528},
+                            {name: '风起霓裳', value: 0.696},
+                            {name: '正青春（东方卫视）', value:0.671},
+                            {name: '正青春（浙江卫视）', value:0.538},
+                            {name: '假日暖洋洋', value:0},
+                            {name: '隐秘而伟大', value:0.241},
+                            {name: '甜蜜', value:0.868},
+                            {name: '刑警之海外行动', value: 0.557},
+                            {name: '生活万岁', value:0},
+                            {name: '暴风眼（东方卫视）', value:0},
+                           
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：2月27日-3月6日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.220,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1},
+                            {name: '风起霓裳', value: 0.745},
+                            {name: '正青春（东方卫视）', value:0},
+                            {name: '正青春（浙江卫视）', value:0},
+                            {name: '假日暖洋洋', value:0},
+                            {name: '隐秘而伟大', value:0.2},
+                            {name: '甜蜜', value:1.146},
+                            {name: '刑警之海外行动', value: 0.794},
+                            {name: '生活万岁', value:1.042},
+                            {name: '暴风眼（东方卫视）', value:0.637},
+                          
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：3月6日-3月12日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.241,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1},
+                            {name: '风起霓裳', value: 0},
+                            {name: '正青春（东方卫视）', value:0},
+                            {name: '正青春（浙江卫视）', value:0},
+                            {name: '假日暖洋洋', value:0},
+                            {name: '隐秘而伟大', value:0.296},
+                            {name: '甜蜜', value:0},
+                            {name: '刑警之海外行动', value: 0.3},
+                            {name: '生活万岁', value:1.151},
+                            {name: '暴风眼（东方卫视）', value:0.700},
+                          
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：3月13日-3月19日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.206,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1},
+                            {name: '风起霓裳', value: 0},
+                            {name: '正青春（东方卫视）', value:0},
+                            {name: '正青春（浙江卫视）', value:0},
+                            {name: '假日暖洋洋', value:0},
+                            {name: '隐秘而伟大', value:0.2},
+                            {name: '甜蜜', value:0},
+                            {name: '刑警之海外行动', value: 0.2},
+                            {name: '生活万岁', value:1.133},
+                            {name: '暴风眼（东方卫视）', value:0.742},
+    
+                        ]}
+                    ]
+                },
+               
+            ]
+        };
+     myChart.setOption(option);
+    </script>
+	  </center>
+	  <p><br></p><p><br></p>
+  <hr>
+  <h2 class="text-center">相关文创 </h2>
+  <hr>
+<p><br></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+          <ul class="list-unstyled">
+            <li class="media col-lg-8 offset-lg-2">
+             <a href="https://www.thepaper.cn/newsDetail_forward_13494252" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image40','','pictures/w4.jpg',1)"><img src="pictures/w4.jpg" alt="" width="260" height="" id="Image40"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1 col-lg-10 offset-lg-1"><a href="https://www.thepaper.cn/newsDetail_forward_13494252" title="Link" style="color:rgba(216,216,216,1.00)">《觉醒年代》同款周边销量暴增，网友自发携带周边打卡红色景点</a></h5>
+             <p class="col-lg-5 offset-lg-1"> 澎湃新闻 </p></div>
+            </li>
+                      <li class="media my-4 col-lg-8 offset-lg-2">
+             <a href="https://baijiahao.baidu.com/s?id=1701146707731622074&wfr=spider&for=pc" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image41','','pictures/w5.jpg',1)"><img src="pictures/w5.jpg" alt="" width="260" height="" id="Image41"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1 col-lg-10 offset-lg-1"><a href="https://baijiahao.baidu.com/s?id=1701146707731622074&wfr=spider&for=pc" title="Link" style="color:rgba(216,216,216,1.00)">《觉醒年代》热播带火系列文创产品</a></h5>
+             <p class="col-lg-5 offset-lg-1"> 北京日报 </p></div>
+            </li>
+                      <li class="media my-4 col-lg-8 offset-lg-2">
+<a href="https://www.bilibili.com/video/BV1o44y1B7P7?from=search&seid=4147577799562823801" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image42','','pictures/w6.jpg',1)"><img src="pictures/w6.jpg" alt="" width="260" height="" id="Image42"></a>
+<div class="media-body">
+            <h5 class="mt-0 mb-1 col-lg-10 offset-lg-1"><a href="https://www.bilibili.com/video/BV1o44y1B7P7?from=search&seid=4147577799562823801" title="Link" style="color:rgba(216,216,216,1.00)">新青年文创好火！看完《觉醒年代》去逛北京的鲁迅博物馆</a></h5>
+             <p class="col-lg-5 offset-lg-1"> 哔哩哔哩 </p></div>
+            </li>
+          </ul>
+    </div>
+<div class="col-lg-4"> </div>
+</div>
+  </div>
+	  <p><br></p><p><br></p>
+  <h2 class="text-center">关于续集…… </h2>
+	  <p><br></p><p><br></p>
+<div class="offset-lg-2 text-white text-center col-lg-8" >
+	  <p>在安徽合肥，有一条延乔路，正是为了纪念陈延年、陈乔年；<br>并行的是集贤路，而陈独秀葬在安徽安庆集贤关。<br>延乔路短，集贤路长，他们没能汇合，却都通往了——繁华大道。</p>
+	  <img src="pictures/yq1.jpg" width="450" height="" alt=""/> 
+	  <p><br>自《觉醒年代》开播后，连日来，不少市民自发来到“延乔路”，<br>在路牌下插上国旗，摆好鲜花、卡片。<br>卡片上写着：“这盛世，如你们所愿。”</p><br>
+	  <img src="pictures/yq2.jpg" width="450" height="" alt=""/> 
+	  <p><br>也有网友深受触动，写下令人热泪盈眶的衍生文章，<br>文章中，先烈们看到了如今的繁华盛世：<br></p>
+  <center> <article style="color: #C0BBBB ;width: 400px " align="left">&nbsp; &nbsp; &nbsp; &nbsp;“他们看到有人带着孩子，有人带着老人，有人拿着酒有人拿着花，并没有很多人哭，大家只是很安静，李大钊和陈延年藏匿在稀松的人群里，人们并不知道自己身边的小年轻就是他们正缅怀着的烈士。
+<br>&nbsp; &nbsp; &nbsp; &nbsp;一拨人散去后，李大钊走过去拿起一捧花，放在鼻尖闻了闻，然后递到了陈延年手里‘很好闻。’陈延年笑着接过，对着花止不住的傻笑,
+<br>&nbsp; &nbsp; &nbsp; &nbsp;‘ 先生，他们爱我！’&nbsp; &nbsp; &nbsp; &nbsp;‘ 因为你爱他们。’”</article>
+	   </center>
+	<p><br></p>
+    <img src="pictures/yq3.jpg" width="450" height="" alt=""/>
+	<p><br></p><p><br></p><p><br></p><p><br></p>
+	<h4>“《觉醒年代》有续集吗？”</h4>
+	<p><br></p><p><br></p>
+	<h3>“ 你现在的幸福生活就是续集！”</h3>
+  <p><br></p><p><br></p><p><br></p><p><br></p> 
+	  </div>
+<hr>
+<hr>
+<hr>
+<footer class="text-center">
+  <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>Copyright © MyWebsite. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.2.1.js"></script>
+</body>
+</html>
