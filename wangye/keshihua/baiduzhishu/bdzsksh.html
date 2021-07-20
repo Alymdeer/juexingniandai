@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百度指数数据</title> 
+		 <link href="css/bootstrap-4.2.1.css" rel="stylesheet">
+		<link  href='../douban/css/style-core.css' type=text/css media=all />
+        <script src="../douban/js/echarts.js"></script>
+		<script src="../douban/js/china.js"></script>
+	</head>
+
+	<body  background="../../pictures/beijing1.jpg"
+	  style="background-size:width=100%"
+	  background-attachment:fixed>
+		    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="file:///C:/Users/Lenovo/PycharmProjects/juexing/zhuye.html">主页<span class="sr-only">(current)</span></a>
+            </li>
+          <li class="nav-item dropdown">
+            </li>
+
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+</form>
+        </div>
+      </div>
+  </nav>
+		<center>
+			<h1 style="text-align: center">在百度指数得到的数据</h1>
+</div><p><br></p><p><br></p>
+			<center>
+				<h5>百度指数相关角色搜索指数</h5><p><br></p>
+	<video width="800" height="" controls="controls">
+		<source src="sousuozhishu.mp4" type="video/mp4">
+	</video>
+	</center>
+		  <h5>下图为观看觉醒年代的用户来自哪些省份地区<br>
+点击任一省份可以查看用户的人数<br>
+可以看出，广东省的用户关注觉醒年代的人最多，江苏省其次，然后是山东省……<br></h5>
+    <div><canvas  id="main5" width="700" height="600"></canvas></div>
+			<p><br></p><p><br></p><h5>下面这张图显示的是关注觉醒年代的用户不同年龄段的分布及排名<br>
+由图可以看出20-29岁年龄段的用户对觉醒年代的搜索量最多，其次是30-39岁，然后是小于19岁的用户<br>
+从而知道20-29岁的用户相比其他年龄段更加关注《觉醒年代》这部电视剧</h5>
+		<div id="container" style="width:700px;height:300px;margin:0;padding:0;"></div>
+			<p><br></p><p><br></p><h5>下面是关注觉醒年代的用户的性别分布<br>
+我们对数据采取饼图进行可视化，可以更加清晰地进行对比<br>可以发现女性用户对觉醒年代的关注搜索要比男性更多一些，<br>也可以看出女性相比男性更加感性一些</h5>
+	<div id="container1" style="width:400px;height:400px;margin:0;padding:0;"></div>
+    <script type="text/javascript">
+     var myChart= echarts.init(document.getElementById('main5'));
+	 var myChart1 = echarts.init(document.getElementById('container'));
+	 var myChart2 = echarts.init(document.getElementById('container1'));
+		function randomData() {return Math.round(Math.random()*1000);}
+     option = {
+        title: {
+                //text: '百度搜索指数全国地图',
+				backgroundColor: '#FFFFFF',  
+				//subtext:'数据来源：新京报',
+				textStyle: {
+                fontWeight: 'normal',              //标题颜色
+                color: '#BD0714',
+				x:'cneter',
+				y:'top',
+				align:'center',
+				lineHeight:1
+        },
+		    subtextStyle:{
+				fontWeight: 'normal',              //标题颜色
+                color: '#000000'
+				}
+            },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: 'iphone3'
+    },
+    visualMap: {
+        min: 100,
+        max: 1000,
+        left: 'left',
+        top: 'bottom',
+        text: ['高', '低'], // 文本，默认为数值文本
+        calculable: true,
+        inRange: {
+            color: ['#FFB3B3', '#D81602', '#730C01']
+        }
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {
+                readOnly: false
+            },
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [{
+        name: 'iphone3',
+        type: 'map',
+        mapType: 'china',
+        roam: false,
+        label: {
+            normal: {
+                show: true
+            },
+            emphasis: {
+                show: true
+            }
+        },
+        data: [{
+                name: '北京',
+                value: '529'
+            },
+            {
+                name: '上海',
+                value: '355'
+            },
+            {
+                name: '重庆',
+                value: '182'
+            },
+            {
+                name: '天津',
+                value: '129'
+            },
+            {
+                name: '内蒙古',
+                value: '81'
+            },
+            {
+                name: '新疆',
+                value: '56'
+            },
+            {
+                name: '广西',
+                value: '179'
+            },
+            {
+                name: '宁夏',
+                value: '29'
+            },
+            {
+                name: '西藏',
+                value: '5'
+            },
+            {
+                name: '河北',
+                value: '350'
+            },
+            {
+                name: '山西',
+                value: '217'
+            },
+            {
+                name: '辽宁',
+                value: '184'
+            },
+            {
+                name: '吉林',
+                value: '108'
+            },
+            {
+                name: '黑龙江',
+                value: '112'
+            },
+            {
+                name: '江苏',
+                value: '654'
+            },
+            {
+                name: '浙江',
+                value: '516'
+            },
+            {
+                name: '安徽',
+                value: '344'
+            },
+            {
+                name: '福建',
+                value: '268'
+            },
+            {
+                name: '江西',
+                value: '225'
+            },
+            {
+                name: '山东',
+                value: '596'
+            },
+            {
+                name: '台湾',
+                value: '0'
+            },
+            {
+                name: '河南',
+                value: '525'
+            },
+            {
+                name: '湖北',
+                value: '361'
+            },
+            {
+                name: '湖南',
+                value: '309'
+            },
+            {
+                name: '广东',
+                value: '1000'
+            },
+            {
+                name: '海南',
+                value: '46'
+            },
+            {
+                name: '四川',
+                value: '371'
+            },
+            {
+                name: '贵州',
+                value: '104'
+            },
+            {
+                name: '云南',
+                value: '128'
+            },
+            {
+                name: '陕西',
+                value: '203'
+            },
+            {
+                name: '甘肃',
+                value: '68'
+            },
+            {
+                name: '青海',
+                value: '15'
+            },
+            {
+                name: '香港',
+                value: '4'
+            },
+            {
+                name: '澳门',
+                value: '1'
+            },
+
+        ]
+    }, ]
+};
+option1= {
+    "textStyle": {
+        "fontSize": 14
+    },
+    "toolbox": {
+        "show": false,
+        "feature": {
+            "saveAsImage": {
+                "backgroundColor": "#FF5757"
+            },
+            "restore": {}
+        },
+        "iconStyle": {
+            "borderColor": "#E87492"
+        }
+    },
+    "legend": {
+        "top": 10,
+        "itemWidth": 8,
+        "itemHeight": 8,
+        "icon": "circle",
+        "left": "center",
+        "padding": 0,
+        "textStyle": {
+            "color": "#c0c3cd",
+            "fontSize": 14,
+            "padding": [2, 0, 0, 0]
+        }
+    },
+    "color": ["#E87492", "#E87492", "#E14352", "#E87492", "#BD0714", "#6c93ee", "#E87492", "#E87492", "#E87492"],
+    "grid": {
+        "containLabel": true,
+        "left": 20,
+        "right": 20,
+        "bottom": 10,
+        "top": 40
+    },
+    "xAxis": {
+        "nameTextStyle": {
+            "color": "#FFAFAF",
+            "padding": [0, 0, -10, 0],
+            "fontSize": 14
+        },
+        "axisLabel": {
+            "color": "#FFAFAF",
+            "fontSize": 14,
+            "interval": 0
+        },
+        "axisTick": {
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "width": 1
+            },
+            "show": true
+        },
+        "splitLine": {
+            "show": false
+        },
+        "axisLine": {
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "width": 1,
+                "type": "dashed"
+            },
+            "show": true
+        },
+        "data": ["≤19", "20~29", "30~39","40~49","≥50"],
+        "type": "category"
+    },
+    "yAxis": {
+        "nameTextStyle": {
+            "color": "#FFAFAF",
+            "padding": [0, 0, -10, 0],
+            "fontSize": 14
+        },
+        "axisLabel": {
+            "color": "#FFAFAF",
+            "fontSize": 14
+        },
+        "axisTick": {
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "width": 1
+            },
+            "show": true
+        },
+        "splitLine": {
+            "show": true,
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "type": "dashed"
+            }
+        },
+        "axisLine": {
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "width": 1,
+                "type": "dashed"
+            },
+            "show": true
+        },
+        "name": ""
+    },
+    "series": [{
+        "data": [20,47,20,12,1],
+        "type": "bar",
+        "barMaxWidth": "auto",
+        "barWidth": 30,
+        "itemStyle": {
+            "color": {
+                "x": 0,
+                "y": 0,
+                "x2": 0,
+                "y2": 1,
+                "type": "linear",
+                "global": false,
+                "colorStops": [{
+                    "offset": 0,
+                    "color": "#E87492"
+                }, {
+                    "offset": 1,
+                    "color": "#F9BFCB"
+                }]
+            }
+        },
+        "label": {
+            "show": true,
+            "position": "top",
+            "distance": 10,
+            "color": "#fff",
+            "position": [30, 10],
+        }
+    }, {
+        "data": [1, 1, 1,1,1],
+        "type": "pictorialBar",
+        "barMaxWidth": "20",
+        "symbol": "diamond",
+        "symbolOffset": [0, "50%"],
+        "symbolSize": [30, 15]
+    }, {
+        "data": [20,47,20,12,1],
+        "type": "pictorialBar",
+        "barMaxWidth": "20",
+        "symbolPosition": "end",
+        "symbol": "diamond",
+        "symbolOffset": [0, "-50%"],
+        "symbolSize": [30, 12],
+        "zlevel": 2
+    }, {
+        "data": [71, 71, 71,71,71],
+        "type": "bar",
+        "barMaxWidth": "auto",
+        "barWidth": 30,
+        "barGap": "-100%",
+        "zlevel": -1
+    }, {
+        "data": [1, 1, 1,1,1],
+        "type": "pictorialBar",
+        "barMaxWidth": "20",
+        "symbol": "diamond",
+        "symbolOffset": [0, "50%"],
+        "symbolSize": [30, 15],
+        "zlevel": -2
+    }, {
+        "data":[71, 71, 71,71,71],
+        "type": "pictorialBar",
+        "barMaxWidth": "20",
+        "symbolPosition": "end",
+        "symbol": "diamond",
+        "symbolOffset": [0, "-50%"],
+        "symbolSize": [30, 12],
+        "zlevel": -1
+    },
+
+],
+    "tooltip": {
+        "trigger": "axis",
+        "show": false
+    }
+}
+option1 = {
+  
+    "toolbox": {
+        "show": false,
+        "feature": {
+            "saveAsImage": {
+                "backgroundColor": "#FF5757"
+            },
+            "restore": {}
+        },
+        "iconStyle": {
+            "borderColor": "#E87492"
+        }
+    },
+    "legend": {
+        "top": 10,
+        "itemWidth": 8,
+        "itemHeight": 8,
+        "icon": "circle",
+        "left": "center",
+        "padding": 0,
+        "textStyle": {
+            "color": "#c0c3cd",
+            "fontSize": 14,
+            "padding": [2, 0, 0, 0]
+        }
+    },
+    "color": ["#E87492", "#E87492", "#E14352", "#E87492", "#BD0714", "#6c93ee", "#E87492", "#E87492", "#E87492"],
+    "grid": {
+        "containLabel": true,
+        "left": 20,
+        "right": 20,
+        "bottom": 10,
+        "top": 40
+    },
+    "xAxis": {
+        "nameTextStyle": {
+            "color": "#FFAFAF",
+            "padding": [0, 0, -10, 0],
+            "fontSize": 14
+        },
+        "axisLabel": {
+            "color": "#FFAFAF",
+            "fontSize": 14,
+            "interval": 0
+        },
+        "axisTick": {
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "width": 1
+            },
+            "show": true
+        },
+        "splitLine": {
+            "show": false
+        },
+        "axisLine": {
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "width": 1,
+                "type": "dashed"
+            },
+            "show": true
+        },
+        "data": ["≤19", "20~29", "30~39","40~49","≥50"],
+        "type": "category"
+    },
+    "yAxis": {
+        "nameTextStyle": {
+            "color": "#FFAFAF",
+            "padding": [0, 0, -10, 0],
+            "fontSize": 14
+        },
+        "axisLabel": {
+            "color": "#FFAFAF",
+            "fontSize": 14
+        },
+        "axisTick": {
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "width": 1
+            },
+            "show": true
+        },
+        "splitLine": {
+            "show": true,
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "type": "dashed"
+            }
+        },
+        "axisLine": {
+            "lineStyle": {
+                "color": "#FFAFAF",
+                "width": 1,
+                "type": "dashed"
+            },
+            "show": true
+        },
+        "name": ""
+    },
+    "series": [{
+        "data": [20,47,20,12,1],
+        "type": "bar",
+        "barMaxWidth": "auto",
+        "barWidth": 30,
+        "itemStyle": {
+            "color": {
+                "x": 0,
+                "y": 0,
+                "x2": 0,
+                "y2": 1,
+                "type": "linear",
+                "global": false,
+                "colorStops": [{
+                    "offset": 0,
+                    "color": "#E87492"
+                }, {
+                    "offset": 1,
+                    "color": "#F9BFCB"
+                }]
+            }
+        },
+        "label": {
+            "show": true,
+            "position": "top",
+            "distance": 10,
+            "color": "#fff",
+            "position": [30, 10],
+        }
+    }, {
+        "data": [1, 1, 1,1,1],
+        "type": "pictorialBar",
+        "barMaxWidth": "20",
+        "symbol": "diamond",
+        "symbolOffset": [0, "50%"],
+        "symbolSize": [30, 15]
+    }, {
+        "data": [20,47,20,12,1],
+        "type": "pictorialBar",
+        "barMaxWidth": "20",
+        "symbolPosition": "end",
+        "symbol": "diamond",
+        "symbolOffset": [0, "-50%"],
+        "symbolSize": [30, 12],
+        "zlevel": 2
+    }, {
+        "data": [71, 71, 71,71,71],
+        "type": "bar",
+        "barMaxWidth": "auto",
+        "barWidth": 30,
+        "barGap": "-100%",
+        "zlevel": -1
+    }, {
+        "data": [1, 1, 1,1,1],
+        "type": "pictorialBar",
+        "barMaxWidth": "20",
+        "symbol": "diamond",
+        "symbolOffset": [0, "50%"],
+        "symbolSize": [30, 15],
+        "zlevel": -2
+    }, {
+        "data":[71, 71, 71,71,71],
+        "type": "pictorialBar",
+        "barMaxWidth": "20",
+        "symbolPosition": "end",
+        "symbol": "diamond",
+        "symbolOffset": [0, "-50%"],
+        "symbolSize": [30, 12],
+        "zlevel": -1
+    },
+
+],
+    "tooltip": {
+        "trigger": "axis",
+        "show": false
+    }
+}
+option2 = {
+        tooltip: {
+            formatter:'{c}%'　
+            //trigger:'axis'
+        },
+        color:[ '#BD0714','#E35D4F'],
+    series: [
+        
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: ['20%', '60%'],
+            labelLine: {
+                length: 30,
+            },
+            legend: {
+				orient:'vertical',
+				x:'right',
+				y:'bottom',
+				show: true,
+				data: ['女','男']
+			},
+            label: {
+                
+                    show: true,
+                    position:'top',
+                    formatter:'{b}\n{c}%',
+                
+                    backgroundColor: '#F6F8FC',
+                    borderColor: '#E25A4C',
+                    borderWidth: 1,
+                    borderRadius: 1,
+                
+                
+                
+            },
+            data: [
+                {value: 61.6, name: '女'},
+                {value: 38.4, name: '男'},
+                
+            ]
+        }
+    ]
+};
+     myChart.setOption(option);
+	 myChart1.setOption(option1);
+	 myChart2.setOption(option2);
+	</script>
+	</center>
+</body>
+</html>
