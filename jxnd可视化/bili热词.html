@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+</head>
+<body>
+     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+     <div id="main" style="width: 800px;height:700px;"></div>
+     <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        option = {
+            title: {
+                text: '弹幕热词榜',
+                subtext: '数据来自B站视频——我们的考点，是他们的一生！高燃民国历史剧《觉醒年代》',
+                x:'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            dataset: {
+                source: [
+                    ['amount', 'product'],
+                    // [4, '觉醒年代yyds'],
+                    // [4, '得先生和赛先生'],
+                    // [4, '天下谁人不识君'],
+                    // [4, '敬礼'],
+                    // [5, '高考作文'],
+                    // [6, '惭愧'],
+                    // [6, '人民万岁'],
+                    // [6, '男神！'],
+                    // [6, '哭了'],
+                    // [7, '哈哈哈哈哈'],
+                    // [7, '他来了！'],
+                    // [7, 'DNA动了'],
+                    [8, '仲甫先生'],
+                    [9, '致敬！'], 
+                    [10, '起立'],
+                    [11, '为中华之崛起而读书'], 
+                    [12, '看得见'],  
+                    [12, '他来了'],
+                    [13, '男神'], 
+                    [17, '天降猛男'], 
+                    [18, '一语成谶'],
+                    [20, '新青年'], 
+                    [22, '全体起立！'], 
+                    [24, '俺也一样'],
+                    //[25, '别骂了别骂了'], 
+                    [30, '别骂了'], 
+                    [31, '致敬'],   
+                    [74, '全体起立'],
+                ]
+            },
+            grid: {containLabel: true,left: 10,},
+            xAxis: {name: 'amount'},
+            yAxis: {type: 'category'},
+            series: [
+                {
+                    type: 'bar',
+                    encode: {
+                        x: 'amount',
+                        y: 'product'
+                    },
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: '#FCA6AC'},
+                                {offset: 0.5, color: '#F84A56'},
+                                {offset: 1, color: '#BD0714'}
+                            ]
+                        )
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: '#FCA6AC'},
+                                    {offset: 0.7, color: '#F61626'},
+                                    {offset: 1, color: '#BD0714'}
+                                ]
+                            )
+                        }
+                    },
+                    showBackground: true,
+                }
+            ]
+        };
+
+
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

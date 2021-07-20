@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 1450px;height:700px;"></div>
+    <script type="text/javascript">
+     var myChart = echarts.init(document.getElementById('main'));
+   
+        option = {
+            baseOption: {
+                timeline: {
+                    axisType: 'category',
+                    // realtime: false,
+                    // loop: false,
+                    autoPlay: true,
+                    // currentIndex: 2,
+                    playInterval: 1000,
+                     controlStyle: {
+                         position: 'center'
+                     },
+                    data: [
+                        {
+                            value: '1月30日~2月5日',
+                            tooltip: {
+                                formatter: '{b} 《觉醒年代》2月1日首映，首次播放即霸占收视率榜首'
+                            },
+                            symbol: 'diamond',
+                            symbolSize: 16
+                        },
+                        '2月6日-2月12日', '2月13日-2月19日','2月27日-3月5日','3月6日-3月12日','3月13日-3月19日',
+    
+                    ],
+                    
+                },
+                title: {
+                    subtext: '数据来自——中国视听大数据'
+                },
+                tooltip: {
+                },
+                legend: {
+                    left: 'right',
+                    data: ['收视率'],
+                },
+                calculable : true,
+                grid: {
+                    top: 90,
+                    bottom: 90,
+                    left:40,
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow',
+                            label: {
+                                show: true,
+                            }
+                        }
+                    }
+                },
+                xAxis: [
+                    {
+                        'type':'category',
+                        'axisLabel':{'interval':0},
+                        'data':[
+                            '觉醒年代','跨过鸭绿江','风起霓裳','正青春（东方卫视）','正青春（浙江卫视）','假日暖洋洋',
+                            '隐秘而伟大','甜蜜','刑警之海外行动','生活万岁','暴风眼（东方卫视）'
+                        ],
+                        splitLine: {show: false},
+                        
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '收视率（%）'
+                    }
+                ],
+                series: [
+                    {name: '收视率', type: 'bar',
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: '#FCA6AC'},
+                                {offset: 0.5, color: '#F84A56'},
+                                {offset: 1, color: '#BD0714'}
+                            ]
+                        )
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: '#FCA6AC'},
+                                    {offset: 0.7, color: '#F61626'},
+                                    {offset: 1, color: '#BD0714'}
+                                ]
+                            )
+                        }
+                    },
+                }
+                ]
+            },
+            options: [
+                {
+                    title: {text: '黄金时段电视剧收视情况收视率：1月30日-2月5日'},
+                    series: [
+                        
+                        {data: [
+                            {name: '觉醒年代',
+                            value: 1.459,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1.204},
+                            {name: '风起霓裳', value: 0.612},
+                            {name: '正青春（东方卫视）', value:0.604},
+                            {name: '正青春（浙江卫视）', value:0.479},
+                            {name: '假日暖洋洋', value:0.364},
+                            {name: '隐秘而伟大', value:0.251},
+                            {name: '甜蜜', value:0},
+                            {name: '刑警之海外行动', value: 0},
+                            {name: '生活万岁', value:0},
+                            {name: '暴风眼（东方卫视）', value:0},
+                           
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：2月6日-2月12日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.391,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1.323},
+                            {name: '风起霓裳', value: 0.691},
+                            {name: '正青春（东方卫视）', value:0.685},
+                            {name: '正青春（浙江卫视）', value:0.551},
+                            {name: '假日暖洋洋', value:0.342},
+                            {name: '隐秘而伟大', value:0.260},
+                            {name: '甜蜜', value:0},
+                            {name: '刑警之海外行动', value: 0},
+                            {name: '生活万岁', value:0},
+                            {name: '暴风眼（东方卫视）', value:0},
+                         
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：2月13日-2月19日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.351,
+                            itemStyle: {
+                            color: '#a90000'
+                            }},
+                            {name: '跨过鸭绿江', value: 1.528},
+                            {name: '风起霓裳', value: 0.696},
+                            {name: '正青春（东方卫视）', value:0.671},
+                            {name: '正青春（浙江卫视）', value:0.538},
+                            {name: '假日暖洋洋', value:0},
+                            {name: '隐秘而伟大', value:0.241},
+                            {name: '甜蜜', value:0.868},
+                            {name: '刑警之海外行动', value: 0.557},
+                            {name: '生活万岁', value:0},
+                            {name: '暴风眼（东方卫视）', value:0},
+                           
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：2月27日-3月6日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.220,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1},
+                            {name: '风起霓裳', value: 0.745},
+                            {name: '正青春（东方卫视）', value:0},
+                            {name: '正青春（浙江卫视）', value:0},
+                            {name: '假日暖洋洋', value:0},
+                            {name: '隐秘而伟大', value:0.2},
+                            {name: '甜蜜', value:1.146},
+                            {name: '刑警之海外行动', value: 0.794},
+                            {name: '生活万岁', value:1.042},
+                            {name: '暴风眼（东方卫视）', value:0.637},
+                          
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：3月6日-3月12日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.241,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1},
+                            {name: '风起霓裳', value: 0},
+                            {name: '正青春（东方卫视）', value:0},
+                            {name: '正青春（浙江卫视）', value:0},
+                            {name: '假日暖洋洋', value:0},
+                            {name: '隐秘而伟大', value:0.296},
+                            {name: '甜蜜', value:0},
+                            {name: '刑警之海外行动', value: 0.3},
+                            {name: '生活万岁', value:1.151},
+                            {name: '暴风眼（东方卫视）', value:0.700},
+                          
+
+                        ]}
+                    ]
+                },
+                {
+                    title : {text: '黄金时段电视剧收视情况收视率：3月13日-3月19日'},
+                    series : [
+                    {data: [
+                            {name: '觉醒年代', 
+                            value: 1.206,
+                            itemStyle: {
+                            color: '#a90000'
+                        }},
+                            {name: '跨过鸭绿江', value: 1},
+                            {name: '风起霓裳', value: 0},
+                            {name: '正青春（东方卫视）', value:0},
+                            {name: '正青春（浙江卫视）', value:0},
+                            {name: '假日暖洋洋', value:0},
+                            {name: '隐秘而伟大', value:0.2},
+                            {name: '甜蜜', value:0},
+                            {name: '刑警之海外行动', value: 0.2},
+                            {name: '生活万岁', value:1.133},
+                            {name: '暴风眼（东方卫视）', value:0.742},
+    
+                        ]}
+                    ]
+                },
+               
+            ]
+        };
+     myChart.setOption(option);
+    </script>
+</body>
+</html>
